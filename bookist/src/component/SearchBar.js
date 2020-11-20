@@ -36,8 +36,8 @@ class SearchBar extends Component {
                     onChange={this.handleChange}
                     value={this.state.input}
                 />
-                <button onClick={() => this.handleClick}>Search</button>
-                <button>Clear Search</button>
+                <button onClick={() => this.handleClick()}>Search</button>
+                <button onClick={() => this.handleClear()}>Clear Search</button>
             </div>
         );
     }

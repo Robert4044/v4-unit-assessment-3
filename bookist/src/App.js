@@ -16,6 +16,8 @@ class App extends Component {
         };
         this.addToShelf = this.addToShelf.bind(this);
         this.clearShelf = this.clearShelf.bind(this);
+        this.filterBooks = this.filterBooks.bind(this);
+        this.reset = this.reset.bind(this);
     }
 
     addToShelf(title) {
@@ -32,7 +34,9 @@ class App extends Component {
 
     filterBooks(input) {
         let filteredBooks = this.state.data.filter(book => {
-            return book.includes(input);
+            if (book.title.includes(input) || book.author.includes(input)) {
+                return filteredBooks;
+            }
         });
         this.setState({
             data: filteredBooks,
